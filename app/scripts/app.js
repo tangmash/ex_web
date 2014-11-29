@@ -56,6 +56,7 @@ angular
     'ngSanitize',
     'ngRoute',
     'ngAnimate',
+    'OrderCtrl'
   ])
   .controller('MainController', ['$scope', '$global', '$timeout', 'progressLoader', '$location', function ($scope, $global, $timeout, progressLoader, $location) {
     $scope.style_fixedHeader = $global.get('fixedHeader');
@@ -133,7 +134,7 @@ angular
   .config(['$provide', '$routeProvider', function ($provide, $routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/index.html',
+        templateUrl: 'views/order/allOrders.html',
       })
       .when('/calendar', {
         templateUrl: 'views/calendar.html',

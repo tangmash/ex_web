@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Forza</title>
+  <title>快递管理系统</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Forza">
@@ -126,8 +126,8 @@
   ng-click="hideSearchBar();hideHeaderBar();"
   ng-cloak
 >
-
-    <div id="headerbar" ng-class="{topNegative1000: style_headerBarHidden, topZero: !style_headerBarHidden}">
+<!-- 下拉菜单 -->
+<!--     <div id="headerbar" ng-class="{topNegative1000: style_headerBarHidden, topZero: !style_headerBarHidden}">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-6 col-sm-2">
@@ -198,16 +198,16 @@
             </div>
         </div>
     </div>
-
+ -->
     <header class="navbar navbar-inverse" ng-class="{'navbar-fixed-top': style_fixedHeader, 'navbar-static-top': !style_fixedHeader}" role="banner">
         <a id="leftmenu-trigger" tooltip-placement="right" tooltip="Toggle Sidebar" ng-click="toggleLeftBar()"></a>
-        <a id="rightmenu-trigger" tooltip-placement="left" tooltip="Toggle Infobar" ng-click="toggleRightBar()"></a>
+<!--         <a id="rightmenu-trigger" tooltip-placement="left" tooltip="Toggle Infobar" ng-click="toggleRightBar()"></a> -->
 
-        <div class="navbar-header pull-left">
-            <a class="navbar-brand" href="#/">Forza</a>
-        </div>
+  <!--       <div class="navbar-header pull-left">
+            <a class="navbar-brand" href="#/">Express</a>
+        </div> -->
 
-        <ul class="nav navbar-nav pull-right toolbar">
+<!--         <ul class="nav navbar-nav pull-right toolbar">
           <li class="dropdown" ng-show="!isLoggedIn">
             <a href="#/extras-login2" style="font-size: 14px"><i class="fa fa-sign-in"></i> Log in</a>
           </li>
@@ -343,9 +343,9 @@
                 <link rel="stylesheet" type="text/css" ng-href="assets/demo/variations/{{headerStylesheet}}">
                 <link rel="stylesheet" type="text/css" ng-href="assets/demo/variations/{{sidebarStylesheet}}">
             </li>
-    </ul>
+    </ul> -->
     </header>
-    <nav class="navbar navbar-default ng-hide" role="navigation" ng-show="style_layoutHorizontal">
+ <!--    <nav class="navbar navbar-default ng-hide" role="navigation" ng-show="style_layoutHorizontal">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <i class="fa fa-reorder"></i>
@@ -361,11 +361,11 @@
                       ng-include="'templates/nav_renderer_horizontal.html'"
                     ></li>
               </ul>
-        </div>
+        </div> -->
     </nav>
     <div id="page-container" class="clearfix">
 
-        <!-- BEGIN SIDEBAR -->
+        <!-- 侧边栏 -->
         <nav id="page-leftbar" role="navigation">
 
             <div>
@@ -400,7 +400,7 @@
         <!-- BEGIN RIGHTBAR -->
         <div id="page-rightbar" sticky-scroll="40" rightbar-right-position="style_layoutBoxed" style="">
           <div jscrollpane="{autoReinitialise:true, autoReinitialiseDelay: 100}" style="height: 100%;padding-bottom:40px">
-              <accordion close-others="rightbarAccordionsShowOne">
+<!--               <accordion close-others="rightbarAccordionsShowOne">
                 <accordion-group is-open="rightbarAccordions[0].open" ng-class="{open:rightbarAccordions[0].open}">
                   <accordion-heading>Account Summary</accordion-heading>
 
@@ -483,9 +483,7 @@
                   </div>
                 </accordion-group>
 
-
-
-              </accordion>
+              </accordion> -->
         </div>
       </div>
       <!-- END RIGHTBAR -->
@@ -496,9 +494,9 @@
 
     <footer role="contentinfo">
         <div class="clearfix">
-            <ul class="list-unstyled list-inline pull-left">
+<!--             <ul class="list-unstyled list-inline pull-left">
                 <li>FORZA &copy; 2014</li>
-            </ul>
+            </ul> -->
             <button class="pull-right btn btn-default btn-xs hidden-print" back-to-top style="padding: 1px 10px;"><i class="fa fa-angle-up"></i></button>
         </div>
     </footer>
@@ -629,6 +627,8 @@
       <script src="scripts/controllers/ColorPicker.js"></script>
       <script src="scripts/controllers/Dashboard.js"></script>
       <script src="scripts/app.js"></script>
+
+      <script src="scripts/order/orderCtrl.js"></script>
       <!-- endbuild -->
 
 </body>

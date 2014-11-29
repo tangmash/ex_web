@@ -1,8 +1,8 @@
 'use strict'
 
 angular
-  .module('theme.tables-ng-grid', [])
-  .controller('TablesAdvancedController', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
+  .module('OrderCtrl', [])
+  .controller('OrderCtrl', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
     $scope.filterOptions = {
         filterText: "",
         useExternalFilter: true
@@ -26,14 +26,18 @@ angular
             var data;
             if (searchText) {
                 var ft = searchText.toLowerCase();
-                $http.get('http://192.168.1.107/order/searchAllOrder').success(function (largeLoad) {        
+                $http.get('http://192.168.1.107:80/order/searchAllOrder').success(function (largeLoad) {        
+                    console.log("1");
+                   console.log(largeLoad);
                     data = largeLoad.filter(function(item) {
                         return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
                     });
                     $scope.setPagingData(data,page,pageSize);
                 });
             } else {
-                $http.get('http://192.168.1.107/order/searchAllOrder').success(function (largeLoad) {
+                $http.get('http://192.168.1.107:80/order/searchAllOrder').success(function (largeLoad) {
+                     console.log("2");
+                     console.log(largeLoad);
                     $scope.setPagingData(largeLoad,page,pageSize);
                 });
             }
@@ -62,3 +66,5 @@ angular
         filterOptions: $scope.filterOptions
     };
   }])
+
+
