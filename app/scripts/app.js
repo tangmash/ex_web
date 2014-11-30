@@ -56,7 +56,10 @@ angular
     'ngSanitize',
     'ngRoute',
     'ngAnimate',
-    'OrderCtrl'
+    'stocksCtrl',
+    'wayBillCtrl',
+    'modifyWayBillCtrl',
+    'ordersCtrl'
   ])
   .controller('MainController', ['$scope', '$global', '$timeout', 'progressLoader', '$location', function ($scope, $global, $timeout, progressLoader, $location) {
     $scope.style_fixedHeader = $global.get('fixedHeader');
@@ -98,7 +101,7 @@ angular
       $scope['style_'+newVal.key] = newVal.value;
     });
     $scope.$on('globalStyles:maxWidth767', function (event, newVal) {
-      $timeout( function () {      
+      $timeout( function () {
         $scope.style_isSmallScreen = newVal;
         if (!newVal) {
           $global.set('leftbarShown', false);
@@ -134,6 +137,19 @@ angular
   .config(['$provide', '$routeProvider', function ($provide, $routeProvider) {
     $routeProvider
       .when('/', {
+        templateUrl: 'views/extras-login.html',
+      })
+      .when('/wayBill/allWayBills', {
+        templateUrl: 'views/wayBill/allWayBills.html',
+      })
+      .when('/wayBill/allStocks', {
+        templateUrl: 'views/wayBill/allStocks.html',
+      })
+      .when('/wayBill/modifyWayBill/:wayBillId', {
+        templateUrl: 'views/wayBill/modifyWayBill.html',
+      })
+
+      .when('/order/allOrders', {
         templateUrl: 'views/order/allOrders.html',
       })
       .when('/calendar', {

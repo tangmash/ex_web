@@ -1,0 +1,93 @@
+        <div id="page-heading">
+            <ol class="breadcrumb">
+                <li><a href="#/">运单管理</a></li>
+                <li>运单列表</li>
+                <li class="active">运单修改</li>
+            </ol>
+
+            <h1>运单修改页面</h1>
+        </div>
+        <div class="container-fluid" ng-controller="modifyWayBillCtrl">
+            <panel panel-class="panel-sky" heading="运单修改">
+                <div action="" class="form-horizontal row-border">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">customerId</label>
+                        <div class="col-sm-6 form-control-static">
+                            {{ oneOrder.customerId || '无' }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">storageYard</label>
+                        <div class="col-sm-6 form-control-static">
+                             <a editable-text="oneOrder.storageYard">{{ oneOrder.storageYard || '无' }}</a>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">trackingBill</label>
+                        <div class="col-sm-6 form-control-static">
+                            {{ oneOrder.trackingBill || '无' }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">weight</label>
+                        <div class="col-sm-6 form-control-static">
+                            <a editable-number="oneOrder.weight" e-min="0">{{ oneOrder.weight || '无' }}</a>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">value</label>
+                        <div class="col-sm-6 form-control-static">
+                            <a editable-number="oneOrder.value" e-min="0">{{ oneOrder.value || '无' }}</a>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">number</label>
+                        <div class="col-sm-6 form-control-static">
+                            {{ oneOrder.number || '无' }}
+                        </div>
+                    </div>
+
+                     <div class="form-group">
+                        <label class="col-sm-3 control-label">goodsName</label>
+                        <div class="col-sm-6 form-control-static">
+                            {{ oneOrder.goodsName || '无' }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">remark</label>
+                        <div class="col-sm-6 form-control-static">
+                            {{ oneOrder.remark || '无' }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">inventoryLocation</label>
+                        <div class="col-sm-6 form-control-static">
+                            <a editable-text="oneOrder.storageYard">{{ oneOrder.inventoryLocation || '无' }}</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">problemStatus</label>
+                        <div class="col-sm-6 form-control-static">
+                            <a editable-text="oneOrder.storageYard"> {{ oneOrder.problemStatus || '无' }}</a>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">storageStatus</label>
+                        <div class="col-sm-6 form-control-static">
+                            <a editable-text="oneOrder.storageYard"> {{ oneOrder.storageStatus || '无' }}</a>
+                        </div>
+                    </div>
+               </div>
+               <a  ng-click="sendToModify()" class="btn btn-success" style="float:right;margin-left:10px">提交</a>
+            </panel>
+        </div>
+
+
+
+

@@ -151,54 +151,31 @@ angular
         //         }
         //     ]
         // },
-        {
-            label: '订单管理',
-            iconClasses: 'fa fa-table',
-            children: [
-                {
-                    label: '所有订单',
-                    url: '#/order/allOrders.html'
-                },
-                {
-                    label: '订单出库',
-                    url: '#/tables-responsive'
-                },
-                {
-                    label: '订单跟踪',
-                    url: '#/tables-editable'
-                },
-                {
-                    label: '运单管理',
-                    url: '#/tables-editable'
-                },
-                {
-                    label: '运单生成',
-                    url: '#/tables-editable'
-                },
-                {
-                    label: '运单跟踪',
-                    url: '#/tables-editable'
-                }
-            ]
-        },
          {
             label: '运单管理',
             iconClasses: 'fa fa-table',
             children: [
                 {
                     label: '运单列表',
-                    url: '#/tables-data'
+                    url: '#/wayBill/allWayBills'
                 },
                 {
                     label: '库存列表',
-                    url: '#/tables-responsive'
-                },
+                    url: '#/wayBill/allStocks'
+                }
+            ]
+        },
+        {
+            label: '订单管理',
+            iconClasses: 'fa fa-table',
+            children: [
                 {
-                    label: '出库预报',
-                    url: '#/tables-editable'
+                    label: '所有订单',
+                    url: '#/order/allOrders'
                 }
             ]
         }
+
         // {
         //     label: 'Advanced Forms',
         //     iconClasses: 'fa fa-pencil',
