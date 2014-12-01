@@ -26,14 +26,14 @@ angular
             var data;
             if (searchText) {
                 var ft = searchText.toLowerCase();
-                $http.get('http://192.168.1.107/order/searchAllOrder').success(function (largeLoad) {        
+                $http.get('http://120.24.211.113/order/searchAllOrder').success(function (largeLoad) {        
                     data = largeLoad.filter(function(item) {
                         return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
                     });
                     $scope.setPagingData(data,page,pageSize);
                 });
             } else {
-                $http.get('http://192.168.1.107/order/searchAllOrder').success(function (largeLoad) {
+                $http.get('http://120.24.211.113/order/searchAllOrder').success(function (largeLoad) {
                     $scope.setPagingData(largeLoad,page,pageSize);
                 });
             }

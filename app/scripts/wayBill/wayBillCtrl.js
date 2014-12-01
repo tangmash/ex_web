@@ -15,12 +15,12 @@ angular
 		currentPage: 1
 	};
 	$scope.addWaybill= function(){
-		 $http.get('http://192.168.1.107:8055/waybill/storage',{params:{'id':$scope.mySelections[0].id}}).success(function (oneData) {
+		 $http.get('http://120.24.211.113:8055/waybill/storage',{params:{'id':$scope.mySelections[0].id}}).success(function (oneData) {
           $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
         });
 	}
   	$scope.deleteWaybill=function(){
-        $http.get('http://192.168.1.107:8055/waybill/deleteWaybill',{params:{'id':$scope.mySelections[0].id}}).success(function (oneData) {
+        $http.get('http://120.24.211.113:8055/waybill/deleteWaybill',{params:{'id':$scope.mySelections[0].id}}).success(function (oneData) {
           $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
         });
       }
@@ -40,14 +40,14 @@ angular
 			var data;
 			if (searchText) {
 				var ft = searchText.toLowerCase();
-				$http.get('http://192.168.1.107:8055/waybill/searchAllWaybill').success(function (largeLoad) {        
+				$http.get('http://120.24.211.113:8055/waybill/searchAllWaybill').success(function (largeLoad) {        
 					data = largeLoad.filter(function(item) {
 						return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
 					});
 					$scope.setPagingData(data,page,pageSize);
 				});
 			} else {
-				$http.get('http://192.168.1.107:8055/waybill/searchAllWaybill').success(function (largeLoad) {
+				$http.get('http://120.24.211.113:8055/waybill/searchAllWaybill').success(function (largeLoad) {
 					$scope.setPagingData(largeLoad,page,pageSize);
 				});
 			}

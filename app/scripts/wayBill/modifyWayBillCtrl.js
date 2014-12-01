@@ -4,14 +4,14 @@ angular
   .module('modifyWayBillCtrl', [])
   .controller('modifyWayBillCtrl', ['$scope', '$filter', '$http', '$timeout','$location','$routeParams', function ($scope, $filter, $http, $timeout,$location,$routeParams) {
     var waybillId = $routeParams.wayBillId;
-    $http.get('http://192.168.1.107:8055/waybill/searchWaybill',{params:{'id':waybillId}}).success(function (oneData) {
+    $http.get('http://120.24.211.113:8055/waybill/searchWaybill',{params:{'id':waybillId}}).success(function (oneData) {
         console.log(JSON.stringify(oneData.trackingBill));
         $scope.oneOrder=oneData;
       });
 
       $scope.sendToModify=function(){
         console.log(JSON.stringify($scope.oneOrder));
-        $http.post('http://192.168.1.107:8055/waybill/update',$scope.oneOrder).success(function (oneData) {
+        $http.post('http://120.24.211.113:8055/waybill/update',$scope.oneOrder).success(function (oneData) {
           $location.path("/wayBill/allWayBills");
         });
       }
